@@ -33,8 +33,10 @@ ifneq "" "$(wildcard /bin/mkdirs)"
 else
   MKDIRS = /bin/mkdir -p
 endif
+PATH := $(abspath $(VERSDIR)):$(PATH)
+export PATH
 
-BUILD_DIRS= $(OBJROOT) $(SYMROOT)
+BUILD_DIRS := $(sort $(OBJROOT) $(SYMROOT))
 
 .DEFTARGET:	all
 
@@ -96,7 +98,7 @@ DSTROOT SRCROOT OBJROOT:
 		exit 1; \
 	fi
 
-$(OBJROOT) $(SYMROOT):
+$(BUILD_DIRS):
 	$(MKDIRS) $@
 
 ALWAYS:

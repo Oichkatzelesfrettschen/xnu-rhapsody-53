@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+"""Compute relative paths akin to NeXT's relpath utility."""
+import argparse, os, sys
+
+def main():
+    parser = argparse.ArgumentParser(description='Compute relative paths.')
+    parser.add_argument('-d', dest='base', required=False, help='Base directory', default=None)
+    parser.add_argument('from_path', nargs='?', default='.')
+    parser.add_argument('to_path', nargs='?', default='.')
+    args = parser.parse_args()
+    base = args.base or os.getcwd()
+    from_abs = os.path.join(base, args.from_path)
+    to_abs = os.path.join(base, args.to_path)
+    rel = os.path.relpath(to_abs, start=from_abs)
+    sys.stdout.write(rel)
+
+if __name__ == '__main__':
+    main()

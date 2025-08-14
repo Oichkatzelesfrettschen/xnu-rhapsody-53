@@ -26,6 +26,7 @@ VERSDIR=.
 
 OBJROOT=$(VERSDIR)/BUILD
 SYMROOT=$(VERSDIR)/BUILD
+DSTROOT=$(VERSDIR)/BUILD
 
 DIR=KERNEL
 SUBDIR=	src conf
@@ -49,4 +50,5 @@ $(DSTROOT):
 #
 # Include file for directory makefiles
 #
-findfile MakeInc.dir
+# Use GNU make's include directive for compatibility with non-NeXT build tools.
+include MakeInc.dir
