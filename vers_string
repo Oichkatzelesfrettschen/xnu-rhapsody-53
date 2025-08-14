@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+# Simple version string generator for legacy build tools.
+prog="$1"
+if [ -z "$prog" ]; then
+  echo "unknown"; exit 0; fi
+# Emit minimal identifier; original tool recorded build info.
+printf '%s 1.0\n' "$prog"

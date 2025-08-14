@@ -43,4 +43,5 @@ SYMROOT=$(VERSDIR)/BUILD
 #
 # Include file for directory makefiles
 #
-findfile MakeInc.dir
+# Use GNU make's include directive for compatibility with modern toolchains.
+include ../MakeInc.dir
