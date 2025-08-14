@@ -49,4 +49,5 @@ $(DSTROOT):
 #
 # Include file for directory makefiles
 #
-findfile MakeInc.dir
+# Use GNU make's include directive for compatibility with non-NeXT build tools.
+include MakeInc.dir

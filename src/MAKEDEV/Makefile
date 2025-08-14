@@ -75,4 +75,5 @@ installhdrs:
 #
 # Include file for shell script makefiles
 #
-findfile MakeInc.csh
+# Use GNU make's include directive for compatibility with modern environments.
+include ../../MakeInc.csh

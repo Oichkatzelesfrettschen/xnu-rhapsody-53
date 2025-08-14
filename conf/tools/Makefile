@@ -34,7 +34,8 @@ DSTROOT=$(VERSDIR)/BUILD
 #
 # Include file for directory makefiles
 #
-findfile MakeInc.dir
+# Use GNU make's include directive for compatibility with modern environments.
+include ../../MakeInc.dir
 
 #
 # Get a usable version of doconf for the installhdrs target.
